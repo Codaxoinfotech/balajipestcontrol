@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://balajipestcontrol.com/sitemap.xml
+
+# Allow all pages
+Allow: /index.html
+Allow: /about.html
+Allow: /services.html
+Allow: /contact.html
+Allow: /testimonials.html
+Allow: /faq.html
+Allow: /sitemap.html
+
+# Allow CSS and JS files
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Disallow admin or private directories (if any)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Crawl-delay (optional)
+# Crawl-delay: 1
