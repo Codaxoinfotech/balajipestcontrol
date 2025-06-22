@@ -1,0 +1,453 @@
+/* Contact Page Specific Styles */
+
+/* Contact Main Section */
+.contact-main {
+    padding: 80px 0;
+    background: white;
+}
+
+.contact-grid-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.contact-info-section h2 {
+    color: #3b2694;
+    margin-bottom: 1rem;
+}
+
+.contact-info-section > p {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+/* Contact Methods */
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-method {
+    display: flex;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: #f8f9ff;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.contact-method:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(59, 38, 148, 0.1);
+}
+
+.method-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #3b2694, #5a3fb8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.method-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.method-info h4 {
+    color: #3b2694;
+    margin-bottom: 0.5rem;
+}
+
+.method-info p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.contact-numbers {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.contact-number {
+    color: #3b2694;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-number:hover {
+    color: #5a3fb8;
+}
+
+.whatsapp-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #25D366;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+.whatsapp-link:hover {
+    background: #20b858;
+    transform: translateY(-2px);
+}
+
+.working-hours {
+    margin-top: 0.5rem;
+}
+
+.hours-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.day {
+    color: #333;
+    font-weight: 500;
+}
+
+.time {
+    color: #3b2694;
+    font-weight: 600;
+}
+
+.emergency-note {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: rgba(220, 53, 69, 0.1);
+    border-radius: 8px;
+    color: #721c24;
+    font-size: 0.9rem;
+}
+
+.emergency-note i {
+    color: #dc3545;
+}
+
+/* Contact Form */
+.contact-form-section {
+    background: linear-gradient(135deg, #f8f9ff 0%, #e8ecff 100%);
+    border-radius: 20px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.form-container {
+    padding: 3rem;
+}
+
+.form-container h3 {
+    color: #3b2694;
+    margin-bottom: 0.5rem;
+    font-size: 1.75rem;
+}
+
+.form-container > p {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 1rem;
+    border: 2px solid #e8ecff;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #3b2694;
+    box-shadow: 0 0 0 3px rgba(59, 38, 148, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    color: #333;
+}
+
+.checkbox-label input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #e8ecff;
+    border-radius: 4px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkmark {
+    background: #3b2694;
+    border-color: #3b2694;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkmark::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.form-submit {
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+.form-note {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(59, 38, 148, 0.1);
+    border-radius: 10px;
+    border-left: 4px solid #3b2694;
+}
+
+.form-note p {
+    margin: 0;
+    color: #333;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-note i {
+    color: #3b2694;
+}
+
+/* Emergency Contact */
+.emergency-contact {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #dc3545, #c82333);
+    color: white;
+}
+
+.emergency-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.emergency-info h2 {
+    color: white;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.emergency-info h2 i {
+    color: #ffd700;
+}
+
+.emergency-info > p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.emergency-situations h4 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.emergency-situations ul {
+    list-style: none;
+}
+
+.emergency-situations li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.emergency-situations li i {
+    color: #ffd700;
+    font-size: 1.1rem;
+}
+
+.emergency-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.emergency-buttons .btn {
+    justify-content: center;
+}
+
+.emergency-note {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.emergency-note p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.emergency-note p:first-child {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.emergency-note i {
+    color: #ffd700;
+}
+
+/* Map Section */
+.map-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.map-container {
+    margin-top: 2rem;
+}
+
+.map-placeholder {
+    background: linear-gradient(135deg, #f8f9ff 0%, #e8ecff 100%);
+    padding: 4rem;
+    border-radius: 20px;
+    text-align: center;
+    border: 2px solid #e8ecff;
+}
+
+.map-placeholder i {
+    font-size: 4rem;
+    color: #3b2694;
+    margin-bottom: 1.5rem;
+}
+
+.map-placeholder h3 {
+    color: #3b2694;
+    margin-bottom: 0.5rem;
+}
+
+.map-placeholder p {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.map-actions {
+    display: flex;
+    justify-content: center;
+}
+
+/* FAQ Quick */
+.faq-quick {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f9ff 0%, #e8ecff 100%);
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.faq-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(59, 38, 148, 0.15);
+}
+
+.faq-item h4 {
+    color: #3b2694;
+    margin-bottom: 1rem;
+}
+
+.faq-item p {
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.faq-cta {
+    text-align: center;
+}

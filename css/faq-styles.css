@@ -1,0 +1,339 @@
+/* FAQ Page Specific Styles */
+
+/* FAQ Categories */
+.faq-categories {
+    padding: 80px 0;
+    background: white;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f8f9ff 0%, #e8ecff 100%);
+    border-radius: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(59, 38, 148, 0.15);
+    border-color: #3b2694;
+}
+
+.category-card i {
+    font-size: 3rem;
+    color: #3b2694;
+    margin-bottom: 1rem;
+}
+
+.category-card h4 {
+    color: #3b2694;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.category-card p {
+    color: #666;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* FAQ Content */
+.faq-content {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f9ff 0%, #e8ecff 100%);
+}
+
+.faq-section {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.faq-section h2 {
+    color: #3b2694;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.faq-section h2 i {
+    font-size: 1.5rem;
+}
+
+.faq-item {
+    border-bottom: 1px solid #e8ecff;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+    color: #3b2694;
+}
+
+.faq-question h4 {
+    color: #333;
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.faq-item.active .faq-question h4 {
+    color: #3b2694;
+}
+
+.faq-question i {
+    color: #3b2694;
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+    padding: 0 0 1.5rem 0;
+}
+
+.faq-answer p {
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.faq-answer p:last-child {
+    margin-bottom: 0;
+}
+
+.faq-answer ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.faq-answer li {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+.faq-answer strong {
+    color: #3b2694;
+}
+
+/* Contact FAQ */
+.contact-faq {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #3b2694 0%, #5a3fb8 100%);
+    color: white;
+    text-align: center;
+}
+
+.contact-faq-content h2 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+.contact-faq-content p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-option {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.contact-option:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+.contact-option i {
+    font-size: 2rem;
+    color: #ffd700;
+}
+
+.contact-option h4 {
+    color: white;
+    margin-bottom: 0.25rem;
+    font-size: 1.1rem;
+}
+
+.contact-option p {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Smooth Scrolling for Anchor Links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* FAQ Section Targeting */
+.faq-section:target {
+    animation: highlight 2s ease-in-out;
+}
+
+@keyframes highlight {
+    0% {
+        background: rgba(59, 38, 148, 0.1);
+        transform: scale(1.02);
+    }
+    100% {
+        background: white;
+        transform: scale(1);
+    }
+}
+
+/* Responsive FAQ Adjustments */
+@media (max-width: 768px) {
+    .faq-section {
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .faq-section h2 {
+        font-size: 1.5rem;
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .faq-question {
+        padding: 1rem 0;
+    }
+    
+    .faq-question h4 {
+        font-size: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .category-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .category-card {
+        padding: 1.5rem;
+    }
+    
+    .category-card i {
+        font-size: 2.5rem;
+    }
+    
+    .contact-options {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .contact-option {
+        padding: 1.5rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .contact-faq-content h2 {
+        font-size: 2rem;
+    }
+    
+    .contact-faq-content p {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .faq-section {
+        padding: 1.5rem;
+    }
+    
+    .faq-section h2 {
+        font-size: 1.25rem;
+    }
+    
+    .faq-question h4 {
+        font-size: 0.95rem;
+    }
+    
+    .category-card {
+        padding: 1.25rem;
+    }
+    
+    .category-card i {
+        font-size: 2rem;
+    }
+    
+    .category-card h4 {
+        font-size: 1.1rem;
+    }
+    
+    .contact-option {
+        padding: 1.25rem;
+    }
+    
+    .contact-option i {
+        font-size: 1.5rem;
+    }
+}

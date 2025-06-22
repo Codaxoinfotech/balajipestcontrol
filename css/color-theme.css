@@ -1,0 +1,427 @@
+/* Balaji Pest Control - Custom Color Theme */
+/* Update these colors to match your logo */
+
+:root {
+    /* Primary Colors - Balaji Brand Red Theme */
+    --primary-color: #850909;        /* Deep Red - Balaji brand color */
+    --primary-light: #a61212;        /* Lighter red */
+    --primary-dark: #5c0606;         /* Darker red */
+
+    /* Secondary Colors */
+    --secondary-color: #ffd700;      /* Gold accent - complements red beautifully */
+    --secondary-light: #ffed4e;      /* Light gold */
+    --secondary-dark: #ccac00;       /* Dark gold */
+
+    /* Accent Colors */
+    --accent-color: #e74c3c;         /* Red for emergency/urgent */
+    --success-color: #27ae60;        /* Green for success */
+    --warning-color: #f39c12;        /* Orange for warnings */
+    --info-color: --primary-color;   /* Use primary for info */
+
+    /* Neutral Colors */
+    --text-dark: #2c3e50;           /* Dark text */
+    --text-medium: #5d6d7e;         /* Medium text */
+    --text-light: #85929e;          /* Light text */
+    --background-light: #f8f9fa;    /* Light background */
+    --background-medium: #ecf0f1;   /* Medium background */
+    --border-color: #d5dbdb;        /* Border color */
+
+    /* WhatsApp and Social */
+    --whatsapp-color: #25D366;      /* WhatsApp green */
+    --phone-color: var(--primary-color); /* Use primary for phone */
+
+    /* Gradients */
+    --primary-gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+    --secondary-gradient: linear-gradient(135deg, var(--secondary-color) 0%, var(--secondary-light) 100%);
+    --hero-gradient: linear-gradient(135deg, var(--background-light) 0%, var(--background-medium) 100%);
+}
+
+/* Alternative Color Schemes - Uncomment the one that matches your logo best */
+
+/* Option 1: Blue Theme (Professional) */
+/*
+:root {
+    --primary-color: #2980b9;
+    --primary-light: #3498db;
+    --primary-dark: #1f618d;
+    --secondary-color: #f39c12;
+    --secondary-light: #f5b041;
+    --secondary-dark: #d68910;
+}
+*/
+
+/* Option 2: Red Theme (Bold) */
+/*
+:root {
+    --primary-color: #c0392b;
+    --primary-light: #e74c3c;
+    --primary-dark: #a93226;
+    --secondary-color: #f39c12;
+    --secondary-light: #f5b041;
+    --secondary-dark: #d68910;
+}
+*/
+
+/* Option 3: Purple Theme (Original) */
+/*
+:root {
+    --primary-color: #3b2694;
+    --primary-light: #5a3fb8;
+    --primary-dark: #2d1a6b;
+    --secondary-color: #ffd700;
+    --secondary-light: #ffed4e;
+    --secondary-dark: #ccac00;
+}
+*/
+
+/* Option 4: Teal Theme (Modern) */
+/*
+:root {
+    --primary-color: #16a085;
+    --primary-light: #1abc9c;
+    --primary-dark: #138d75;
+    --secondary-color: #f39c12;
+    --secondary-light: #f5b041;
+    --secondary-dark: #d68910;
+}
+*/
+
+/* Apply the color variables to existing styles */
+.header {
+    background: var(--primary-color) !important;
+}
+
+.btn-primary {
+    background: var(--primary-gradient) !important;
+    box-shadow: 0 4px 15px rgba(133, 9, 9, 0.3) !important;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 6px 20px rgba(133, 9, 9, 0.4) !important;
+}
+
+.highlight {
+    color: var(--primary-color) !important;
+}
+
+.highlightt {
+    color: white !important;
+}
+
+.hero-subtitle {
+    color: var(--primary-color) !important;
+}
+
+.hero-subtitlee {
+    color: white !important;
+}
+
+.section-header h2 {
+    color: var(--primary-color) !important;
+}
+
+.service-icon,
+.feature-icon,
+.contact-icon,
+.mv-icon {
+    background: var(--primary-gradient) !important;
+}
+
+.service-card h3,
+.feature-item h3,
+.mv-item h3,
+.choose-item h4,
+.about-text h2 {
+    color: var(--primary-color) !important;
+}
+
+.hero-location i,
+.feature i {
+    color: var(--primary-color) !important;
+}
+
+.area-item i,
+.intro-feature i {
+    color: var(--primary-color) !important;
+}
+
+.cta-section {
+    background: var(--primary-gradient) !important;
+}
+
+.footer {
+    background: var(--primary-color) !important;
+}
+
+.footer-section h3 i {
+    color: var(--secondary-color) !important;
+}
+
+.footer-tagline {
+    color: var(--secondary-color) !important;
+}
+
+.footer-contact i {
+    color: var(--secondary-color) !important;
+}
+
+.nav-list a:hover,
+.nav-list a.active {
+    color: var(--secondary-color) !important;
+}
+
+.breadcrumb a:hover {
+    color: var(--secondary-color) !important;
+}
+
+.page-header {
+    background: var(--primary-gradient) !important;
+}
+
+.choose-number {
+    background: var(--primary-gradient) !important;
+}
+
+.service-icon-large {
+    background: var(--primary-gradient) !important;
+}
+
+.package-card.featured {
+    border-color: var(--primary-color) !important;
+}
+
+.package-badge {
+    background: var(--primary-color) !important;
+}
+
+.package-header h3,
+.package-price .currency,
+.package-price .amount {
+    color: var(--primary-color) !important;
+}
+
+.contact-method:hover {
+    box-shadow: 0 10px 25px rgba(133, 9, 9, 0.1) !important;
+}
+
+.method-icon {
+    background: var(--primary-gradient) !important;
+}
+
+.contact-number {
+    color: var(--primary-color) !important;
+}
+
+.contact-number:hover {
+    color: var(--primary-light) !important;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 3px rgba(133, 9, 9, 0.1) !important;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkmark {
+    background: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.form-note {
+    background: rgba(133, 9, 9, 0.1) !important;
+    border-left-color: var(--primary-color) !important;
+}
+
+.form-note i {
+    color: var(--primary-color) !important;
+}
+
+.area-card.highlight {
+    border-color: var(--primary-color) !important;
+    background: var(--primary-gradient) !important;
+}
+
+.area-card h4 {
+    color: var(--primary-color) !important;
+}
+
+.area-card li i {
+    color: var(--primary-color) !important;
+}
+
+.emergency-contact {
+    background: var(--accent-color) !important;
+}
+
+.map-placeholder i {
+    color: var(--primary-color) !important;
+}
+
+.map-placeholder h4 {
+    color: var(--primary-color) !important;
+}
+
+.faq-item.active .faq-question h4,
+.faq-question:hover {
+    color: var(--primary-color) !important;
+}
+
+.faq-question i {
+    color: var(--primary-color) !important;
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+    background: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.review-card {
+    border-left-color: var(--primary-color) !important;
+}
+
+.reviewer-info strong {
+    color: var(--primary-color) !important;
+}
+
+.review-service,
+.service-tag {
+    background: var(--primary-color) !important;
+}
+
+.customer-avatar {
+    background: var(--primary-gradient) !important;
+}
+
+.customer-details h4 {
+    color: var(--primary-color) !important;
+}
+
+.google-rating .rating-score {
+    color: var(--primary-color) !important;
+}
+
+.rating-bar span:last-child {
+    color: var(--primary-color) !important;
+}
+
+.fill {
+    background: var(--primary-gradient) !important;
+}
+
+.review-option:hover {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 15px 35px rgba(133, 9, 9, 0.15) !important;
+}
+
+.review-option i,
+.review-option h4 {
+    color: var(--primary-color) !important;
+}
+
+.category-card:hover {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 20px 40px rgba(133, 9, 9, 0.15) !important;
+}
+
+.category-card i,
+.category-card h4 {
+    color: var(--primary-color) !important;
+}
+
+.faq-section h2 {
+    color: var(--primary-color) !important;
+}
+
+.contact-option:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+}
+
+.contact-option i {
+    color: var(--secondary-color) !important;
+}
+
+.float-btn.call-btn {
+    background: var(--primary-gradient) !important;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(133, 9, 9, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(133, 9, 9, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(133, 9, 9, 0);
+    }
+}
+
+/* Footer Logo Styling */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.footer-logo-img {
+    height: 60px;
+    width: auto;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+.footer-logo h3 {
+    color: white !important;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* Responsive logo adjustments */
+@media (max-width: 768px) {
+    .logo-img {
+        height: 40px;
+    }
+
+    .logo h2 {
+        font-size: 1.25rem;
+    }
+
+    .footer-logo-img {
+        height: 50px;
+    }
+
+    .footer-logo h3 {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-img {
+        height: 35px;
+    }
+
+    .logo h2 {
+        font-size: 1.1rem;
+    }
+
+    .logo {
+        gap: 0.5rem;
+    }
+
+    .footer-logo-img {
+        height: 40px;
+    }
+
+    .footer-logo h3 {
+        font-size: 1.1rem;
+    }
+
+    .footer-logo {
+        gap: 0.5rem;
+        flex-direction: column;
+        text-align: center;
+    }
+}
