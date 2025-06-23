@@ -92,13 +92,10 @@ a {
 
 /* Header */
 .header {
-    background: #3b2694;
-    color: white;
+    background: white;
+    color: #333;
     padding: 1rem 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    position: relative;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }

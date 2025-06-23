@@ -1,0 +1,490 @@
+/* Top Navbar Styles */
+.top-navbar {
+    background:  #d3b925;
+    color: white;
+    padding: 0.75rem 0;
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 1001;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Ensure top navbar is above main header */
+.top-navbar + .header {
+    position: relative;
+    top: 0;
+}
+
+.top-navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.top-contact {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.top-contact .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.top-contact .contact-item i {
+    color: #ffd700;
+    font-size: 0.9rem;
+}
+
+.top-social {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.social-link {
+    width: 35px;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    border-color: #ffd700;
+}
+
+.social-link i {
+    font-size: 0.9rem;
+}
+
+/* Hero Slider Styles */
+.hero-slider {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    overflow: hidden;
+    background: #000;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 1;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.slide-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slide-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.slide-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(133, 9, 9, 0.8) 0%, rgba(133, 9, 9, 0.6) 50%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+.slide-content {
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.slide-text {
+    max-width: 600px;
+    animation: slideInLeft 1s ease-out;
+}
+
+.slide.active .slide-text {
+    animation: slideInLeft 1s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.slide-badge i {
+    color: #ffd700;
+    font-size: 1.1rem;
+}
+
+.slide-badge span {
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.slide-text h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    color: white;
+}
+
+.slide-text p {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.slide-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.slide-buttons .btn {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    min-width: 180px;
+    text-align: center;
+}
+
+.slide-buttons .btn-primary {
+    background: linear-gradient(135deg, var(--primary-color, #850909), var(--primary-light, #a61212));
+    color: white;
+    border: 2px solid transparent;
+    box-shadow: 0 8px 25px rgba(133, 9, 9, 0.3);
+}
+
+.slide-buttons .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(133, 9, 9, 0.4);
+}
+
+.slide-buttons .btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.slide-buttons .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #ffd700;
+    transform: translateY(-3px);
+}
+
+.emergency-pulse {
+    animation: emergencyPulse 2s infinite;
+}
+
+@keyframes emergencyPulse {
+    0% {
+        box-shadow: 0 8px 25px rgba(133, 9, 9, 0.3);
+    }
+    50% {
+        box-shadow: 0 8px 25px rgba(133, 9, 9, 0.6), 0 0 0 10px rgba(133, 9, 9, 0.2);
+    }
+    100% {
+        box-shadow: 0 8px 25px rgba(133, 9, 9, 0.3);
+    }
+}
+
+.slide-features {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.slide-features .feature {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+.slide-features .feature i {
+    color: #ffd700;
+    font-size: 1.1rem;
+}
+
+/* Slider Navigation */
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+    z-index: 4;
+}
+
+.nav-btn {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: #ffd700;
+    transform: scale(1.1);
+}
+
+/* Slider Dots */
+.slider-dots {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem;
+    z-index: 4;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active,
+.dot:hover {
+    background: #ffd700;
+    border-color: #ffd700;
+    transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .slide-text h1 {
+        font-size: 3rem;
+    }
+
+    .slide-text p {
+        font-size: 1.2rem;
+    }
+
+    .slider-nav {
+        padding: 0 1rem;
+    }
+
+    .nav-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-navbar {
+        padding: 0.5rem 0;
+        font-size: 0.8rem;
+    }
+
+    .top-navbar-content {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .top-contact {
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .top-contact .contact-item {
+        font-size: 0.8rem;
+    }
+
+    .social-link {
+        width: 30px;
+        height: 30px;
+    }
+
+    .social-link i {
+        font-size: 0.8rem;
+    }
+
+    .hero-slider {
+        height: 80vh;
+        min-height: 500px;
+    }
+
+    .slide-text {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .slide-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .slide-text p {
+        font-size: 1.1rem;
+    }
+
+    .slide-buttons {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .slide-buttons .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .slide-features {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .slider-nav {
+        padding: 0 0.5rem;
+    }
+
+    .nav-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+
+    .slider-dots {
+        bottom: 1rem;
+    }
+
+    .dot {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-contact {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .top-contact .contact-item {
+        justify-content: center;
+        font-size: 0.75rem;
+    }
+
+    .slide-text h1 {
+        font-size: 2rem;
+    }
+
+    .slide-text p {
+        font-size: 1rem;
+    }
+
+    .slide-badge {
+        padding: 0.5rem 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .slide-badge span {
+        font-size: 0.8rem;
+    }
+
+    .slide-buttons .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        min-width: auto;
+    }
+
+    .slide-features {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .nav-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
+}
+

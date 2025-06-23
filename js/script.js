@@ -4,13 +4,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mobile Menu Toggle
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navList = document.querySelector('.nav-list');
-    
+
     if (mobileMenuToggle && navList) {
         mobileMenuToggle.addEventListener('click', function() {
             navList.classList.toggle('active');
             mobileMenuToggle.classList.toggle('active');
         });
-        
+
         // Close mobile menu when clicking on a link
         const navLinks = document.querySelectorAll('.nav-list a');
         navLinks.forEach(link => {
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 mobileMenuToggle.classList.remove('active');
             });
         });
-        
+
         // Close mobile menu when clicking outside
         document.addEventListener('click', function(event) {
             if (!mobileMenuToggle.contains(event.target) && !navList.contains(event.target)) {
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
+
     // Smooth Scrolling for Anchor Links
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
     anchorLinks.forEach(link => {
@@ -36,11 +36,11 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             const targetSection = document.querySelector(targetId);
-            
+
             if (targetSection) {
                 const headerHeight = document.querySelector('.header').offsetHeight;
                 const targetPosition = targetSection.offsetTop - headerHeight - 20;
-                
+
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
@@ -48,14 +48,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
+
     // Header Scroll Effect
     const header = document.querySelector('.header');
     let lastScrollTop = 0;
-    
+
     window.addEventListener('scroll', function() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
+
         if (scrollTop > 100) {
             header.style.background = 'rgba(59, 38, 148, 0.95)';
             header.style.backdropFilter = 'blur(10px)';
@@ -63,16 +63,16 @@ document.addEventListener('DOMContentLoaded', function() {
             header.style.background = '#3b2694';
             header.style.backdropFilter = 'none';
         }
-        
+
         lastScrollTop = scrollTop;
     });
-    
+
     // Animate Elements on Scroll
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
-    
+
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, observerOptions);
-    
+
     // Observe elements for animation
     const animateElements = document.querySelectorAll('.service-card, .feature-item, .contact-item');
     animateElements.forEach(el => {
@@ -90,14 +90,14 @@ document.addEventListener('DOMContentLoaded', function() {
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
     });
-    
+
     // Phone Number Click Tracking
     const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
     phoneLinks.forEach(link => {
         link.addEventListener('click', function() {
             // Track phone clicks (can be integrated with analytics)
             console.log('Phone number clicked:', this.href);
-            
+
             // Optional: Send to analytics
             if (typeof gtag !== 'undefined') {
                 gtag('event', 'phone_call', {
@@ -107,14 +107,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
+
     // WhatsApp Click Tracking
     const whatsappLinks = document.querySelectorAll('a[href*="wa.me"]');
     whatsappLinks.forEach(link => {
         link.addEventListener('click', function() {
             // Track WhatsApp clicks
             console.log('WhatsApp clicked:', this.href);
-            
+
             // Optional: Send to analytics
             if (typeof gtag !== 'undefined') {
                 gtag('event', 'whatsapp_click', {
@@ -124,46 +124,46 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
+
     // Form Validation (if contact form exists)
     const contactForm = document.querySelector('#contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            
+
             const formData = new FormData(this);
             const name = formData.get('name');
             const phone = formData.get('phone');
             const message = formData.get('message');
-            
+
             // Basic validation
             if (!name || !phone || !message) {
                 showNotification('Please fill in all required fields.', 'error');
                 return;
             }
-            
+
             if (!isValidPhone(phone)) {
                 showNotification('Please enter a valid phone number.', 'error');
                 return;
             }
-            
+
             // Submit form (implement your form submission logic here)
             submitContactForm(formData);
         });
     }
-    
+
     // Utility Functions
     function isValidPhone(phone) {
         const phoneRegex = /^[6-9]\d{9}$/; // Indian mobile number format
         return phoneRegex.test(phone.replace(/\D/g, ''));
     }
-    
+
     function showNotification(message, type = 'info') {
         // Create notification element
         const notification = document.createElement('div');
         notification.className = `notification notification-${type}`;
         notification.textContent = message;
-        
+
         // Style the notification
         notification.style.cssText = `
             position: fixed;
@@ -180,9 +180,9 @@ document.addEventListener('DOMContentLoaded', function() {
             word-wrap: break-word;
             animation: slideInRight 0.3s ease;
         `;
-        
+
         document.body.appendChild(notification);
-        
+
         // Remove notification after 5 seconds
         setTimeout(() => {
             notification.style.animation = 'slideOutRight 0.3s ease';
@@ -193,40 +193,40 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 300);
         }, 5000);
     }
-    
+
     function submitContactForm(formData) {
         // Show loading state
         const submitBtn = document.querySelector('#contact-form button[type="submit"]');
         const originalText = submitBtn.textContent;
         submitBtn.innerHTML = '<span class="loading"></span> Sending...';
         submitBtn.disabled = true;
-        
+
         // Simulate form submission (replace with actual implementation)
         setTimeout(() => {
             // Reset button
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
-            
+
             // Show success message
             showNotification('Thank you! We will contact you soon.', 'success');
-            
+
             // Reset form
             document.querySelector('#contact-form').reset();
-            
+
             // Optional: Redirect to WhatsApp with pre-filled message
             const name = formData.get('name');
             const phone = formData.get('phone');
             const message = formData.get('message');
             const whatsappMessage = `Hi, I'm ${name}. Phone: ${phone}. Message: ${message}`;
             const whatsappUrl = `https://wa.me/918839893211?text=${encodeURIComponent(whatsappMessage)}`;
-            
+
             setTimeout(() => {
                 window.open(whatsappUrl, '_blank');
             }, 1000);
-            
+
         }, 2000);
     }
-    
+
     // Lazy Loading for Images
     const images = document.querySelectorAll('img[loading="lazy"]');
     if ('IntersectionObserver' in window) {
@@ -240,10 +240,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
-        
+
         images.forEach(img => imageObserver.observe(img));
     }
-    
+
     // Service Card Click to Call
     const serviceCards = document.querySelectorAll('.service-card');
     serviceCards.forEach(card => {
@@ -253,12 +253,12 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => {
                 this.style.transform = '';
             }, 150);
-            
+
             // Optional: Open call or WhatsApp
             // window.open('tel:8839893211', '_self');
         });
     });
-    
+
     // Add CSS animations
     const style = document.createElement('style');
     style.textContent = `
@@ -272,7 +272,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 opacity: 1;
             }
         }
-        
+
         @keyframes slideOutRight {
             from {
                 transform: translateX(0);
@@ -283,23 +283,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 opacity: 0;
             }
         }
-        
+
         .service-card {
             cursor: pointer;
         }
-        
+
         .service-card:active {
             transform: scale(0.98) !important;
         }
     `;
     document.head.appendChild(style);
-    
+
     // Performance optimization: Preload critical resources
     const preloadLinks = [
         'css/style.css',
         'css/responsive.css'
     ];
-    
+
     preloadLinks.forEach(href => {
         const link = document.createElement('link');
         link.rel = 'preload';
@@ -307,7 +307,7 @@ document.addEventListener('DOMContentLoaded', function() {
         link.href = href;
         document.head.appendChild(link);
     });
-    
+
     // Add structured data for SEO
     const structuredData = {
         "@context": "https://schema.org",
@@ -336,14 +336,14 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         "services": [
             "Termite Control",
-            "Cockroach Control", 
+            "Cockroach Control",
             "Rat Control",
             "Ant Control",
             "Mosquito Control",
             "Sanitization Services"
         ]
     };
-    
+
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     script.textContent = JSON.stringify(structuredData);
@@ -362,3 +362,129 @@ if ('serviceWorker' in navigator) {
             });
     });
 }
+
+// Hero Slider Functionality
+let currentSlideIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+let slideInterval;
+
+// Initialize slider
+function initSlider() {
+    if (slides.length > 0) {
+        showSlide(0);
+        startAutoSlide();
+    }
+}
+
+// Show specific slide
+function showSlide(index) {
+    // Remove active class from all slides and dots
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+
+    // Add active class to current slide and dot
+    if (slides[index]) {
+        slides[index].classList.add('active');
+    }
+    if (dots[index]) {
+        dots[index].classList.add('active');
+    }
+
+    currentSlideIndex = index;
+}
+
+// Change slide (next/previous)
+function changeSlide(direction) {
+    currentSlideIndex += direction;
+
+    if (currentSlideIndex >= slides.length) {
+        currentSlideIndex = 0;
+    } else if (currentSlideIndex < 0) {
+        currentSlideIndex = slides.length - 1;
+    }
+
+    showSlide(currentSlideIndex);
+    resetAutoSlide();
+}
+
+// Go to specific slide
+function currentSlide(index) {
+    showSlide(index - 1);
+    resetAutoSlide();
+}
+
+// Auto slide functionality
+function startAutoSlide() {
+    slideInterval = setInterval(() => {
+        changeSlide(1);
+    }, 5000); // Change slide every 5 seconds
+}
+
+// Reset auto slide
+function resetAutoSlide() {
+    clearInterval(slideInterval);
+    startAutoSlide();
+}
+
+// Pause auto slide on hover
+function pauseAutoSlide() {
+    clearInterval(slideInterval);
+}
+
+// Resume auto slide
+function resumeAutoSlide() {
+    startAutoSlide();
+}
+
+// Initialize slider when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize slider
+    setTimeout(initSlider, 100); // Small delay to ensure DOM is ready
+
+    // Pause slider on hover
+    const sliderContainer = document.querySelector('.hero-slider');
+    if (sliderContainer) {
+        sliderContainer.addEventListener('mouseenter', pauseAutoSlide);
+        sliderContainer.addEventListener('mouseleave', resumeAutoSlide);
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') {
+            changeSlide(-1);
+        } else if (e.key === 'ArrowRight') {
+            changeSlide(1);
+        }
+    });
+
+    // Touch/swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    if (sliderContainer) {
+        sliderContainer.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        sliderContainer.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+    }
+
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+                // Swipe left - next slide
+                changeSlide(1);
+            } else {
+                // Swipe right - previous slide
+                changeSlide(-1);
+            }
+        }
+    }
+});
